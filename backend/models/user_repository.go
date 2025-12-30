@@ -7,17 +7,17 @@ import (
 )
 
 func CreateUserInfo(user *UserInfo) error {
-	query := `INSERT INTO user_info_tab (name, email, phone, hobby, age, status, created_at, updated_at) 
-	          VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
+	query := `INSERT INTO user_info_tab (name, email, phone, hobby, age, address, status, created_at, updated_at) 
+	          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`
 	
 	now := time.Now()
 	_, err := database.DB.Exec(query, user.Name, user.Email, user.Phone, user.Hobby, user.Age, 
-		"pending", now, now)
+		user.Address, "pending", now, now)
 	return err
 }
 
 func GetAllUsers() ([]UserInfo, error) {
-	query := `SELECT id, name, email, phone, hobby, age, status, created_at, updated_at 
+	query := `SELECT id, name, email, phone, hobby, age, address, status, created_at, updated_at 
 	          FROM user_info_tab ORDER BY created_at DESC`
 	
 	rows, err := database.DB.Query(query)
@@ -30,7 +30,7 @@ func GetAllUsers() ([]UserInfo, error) {
 	for rows.Next() {
 		var user UserInfo
 		err := rows.Scan(&user.ID, &user.Name, &user.Email, &user.Phone, &user.Hobby, 
-			&user.Age, &user.Status, &user.CreatedAt, &user.UpdatedAt)
+			&user.Age, &user.Address, &user.Status, &user.CreatedAt, &user.UpdatedAt)
 		if err != nil {
 			return nil, err
 		}
@@ -47,12 +47,12 @@ func UpdateUserStatus(id int64, status string) error {
 }
 
 func GetUserByID(id int64) (*UserInfo, error) {
-	query := `SELECT id, name, email, phone, hobby, age, status, created_at, updated_at 
+	query := `SELECT id, name, email, phone, hobby, age, address, status, created_at, updated_at 
 	          FROM user_info_tab WHERE id = ?`
 	
 	var user UserInfo
 	err := database.DB.QueryRow(query, id).Scan(&user.ID, &user.Name, &user.Email, 
-		&user.Phone, &user.Hobby, &user.Age, &user.Status, &user.CreatedAt, &user.UpdatedAt)
+		&user.Phone, &user.Hobby, &user.Age, &user.Address, &user.Status, &user.CreatedAt, &user.UpdatedAt)
 	
 	if err == sql.ErrNoRows {
 		return nil, nil
@@ -62,5 +62,11 @@ func GetUserByID(id int64) (*UserInfo, error) {
 	}
 	
 	return &user, nil
+}
+
+func DeleteUser(id int64) error {
+	query := `DELETE FROM user_info_tab WHERE id = ?`
+	_, err := database.DB.Exec(query, id)
+	return err
 }
 

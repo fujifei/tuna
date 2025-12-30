@@ -45,11 +45,12 @@ func submitUserInfo(c *gin.Context) {
 	}
 
 	user := &models.UserInfo{
-		Name:  req.Name,
-		Email: req.Email,
-		Phone: req.Phone,
-		Hobby: req.Hobby,
-		Age:   req.Age,
+		Name:    req.Name,
+		Email:   req.Email,
+		Phone:   req.Phone,
+		Hobby:   req.Hobby,
+		Age:     req.Age,
+		Address: req.Address,
 	}
 
 	if err := models.CreateUserInfo(user); err != nil {

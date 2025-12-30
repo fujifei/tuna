@@ -34,6 +34,7 @@ func SetupRouter() *gin.Engine {
 
 	router.GET("/admin/users", getUsers)
 	router.PUT("/admin/users/:id/status", updateUserStatus)
+	router.DELETE("/admin/users/:id", deleteUser)
 	router.GET("/admin/health", healthCheck)
 
 	return router
@@ -80,6 +81,33 @@ func updateUserStatus(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{"message": "User status updated successfully"})
+}
+
+func deleteUser(c *gin.Context) {
+	idStr := c.Param("id")
+	id, err := strconv.ParseInt(idStr, 10, 64)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid user ID"})
+		return
+	}
+
+	// Check if user exists
+	user, err := models.GetUserByID(id)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to check user"})
+		return
+	}
+	if user == nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": "User not found"})
+		return
+	}
+
+	if err := models.DeleteUser(id); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to delete user"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "User deleted successfully"})
 }
 
 func healthCheck(c *gin.Context) {

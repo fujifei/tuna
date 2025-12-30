@@ -139,6 +139,10 @@
                 <label for="age">年龄 *</label>
                 <input type="number" id="age" name="age" min="1" max="150" required>
             </div>
+            <div class="form-group">
+                <label for="address">地址 *</label>
+                <input type="text" id="address" name="address" required>
+            </div>
             <button type="submit" id="submitBtn">提交</button>
         </form>
         <div id="message" class="message"></div>
@@ -162,7 +166,8 @@
                 email: document.getElementById('email').value.trim(),
                 phone: document.getElementById('phone').value.trim(),
                 hobby: document.getElementById('hobby').value.trim(),
-                age: parseInt(document.getElementById('age').value)
+                age: parseInt(document.getElementById('age').value),
+                address: document.getElementById('address').value.trim()
             };
 
             try {

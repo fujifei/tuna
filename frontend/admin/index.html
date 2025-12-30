@@ -191,6 +191,7 @@
                     <th>手机号</th>
                     <th>爱好</th>
                     <th>年龄</th>
+                    <th>地址</th>
                     <th>状态</th>
                     <th>创建时间</th>
                     <th>操作</th>
@@ -253,6 +254,7 @@
                                 <td>${user.phone}</td>
                                 <td>${user.hobby}</td>
                                 <td>${user.age}</td>
+                                <td>${user.address || ''}</td>
                                 <td>
                                     <span class="status ${getStatusClass(user.status)}">
                                         ${getStatusText(user.status)}
