@@ -1,0 +1,24 @@
+dsn agile:agile@tcp(127.0.0.1:6666)/tuna?charset=utf8mb4&parseTime=True&loc=Local
+2025/12/29 12:16:23 API server starting on port 8812
+dsn agile:agile@tcp(127.0.0.1:6666)/tuna?charset=utf8mb4&parseTime=True&loc=Local
+2025/12/29 14:35:20 API server starting on port 8812
+dsn agile:agile@tcp(127.0.0.1:6666)/tuna?charset=utf8mb4&parseTime=True&loc=Local
+2025/12/29 15:59:13 API server starting on port 8812
+[GIN] 2025/12/29 - 15:59:38 | 204 |      71.922µs |             ::1 | OPTIONS  "/api/submit"
+[GIN] 2025/12/29 - 15:59:38 | 200 |   20.499961ms |             ::1 | POST     "/api/submit"
+dsn agile:agile@tcp(127.0.0.1:6666)/tuna?charset=utf8mb4&parseTime=True&loc=Local
+2025/12/29 16:07:32 API server starting on port 8812
+[GIN] 2025/12/29 - 16:08:01 | 204 |    1.698912ms |             ::1 | OPTIONS  "/api/submit"
+[GIN] 2025/12/29 - 16:08:01 | 200 |    23.86182ms |             ::1 | POST     "/api/submit"
+dsn agile:agile@tcp(127.0.0.1:6666)/tuna?charset=utf8mb4&parseTime=True&loc=Local
+2025/12/29 16:20:13 API server starting on port 8812
+dsn agile:agile@tcp(127.0.0.1:6666)/tuna?charset=utf8mb4&parseTime=True&loc=Local
+2025/12/29 17:49:41 API server starting on port 8812
+dsn agile:agile@tcp(127.0.0.1:6666)/tuna?charset=utf8mb4&parseTime=True&loc=Local
+2025/12/29 18:10:39 API server starting on port 8812
+dsn agile:agile@tcp(127.0.0.1:6666)/tuna?charset=utf8mb4&parseTime=True&loc=Local
+2025/12/29 18:19:15 API server starting on port 8812
+dsn agile:agile@tcp(127.0.0.1:6666)/tuna?charset=utf8mb4&parseTime=True&loc=Local
+2025/12/29 18:22:01 API server starting on port 8812
+dsn agile:agile@tcp(127.0.0.1:6666)/tuna?charset=utf8mb4&parseTime=True&loc=Local
+2025/12/29 18:26:50 API server starting on port 8812

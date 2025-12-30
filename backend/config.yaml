@@ -1,0 +1,24 @@
+# Tuna项目配置文件
+
+# 数据库配置
+database:
+  host: "127.0.0.1"
+  port: "6666"
+  user: "agile"
+  password: "agile"
+  name: "tuna"
+
+# 服务端口配置
+ports:
+  api: "8812"
+  admin: "8813"
+
+# GOC配置
+goc:
+  wrapper_port: "7777"
+  rabbitmq_url: "amqp://coverage:coverage123@localhost:5672/"
+
+# GOC构建配置
+goc_build:
+  source_dir: "/Users/jifei.fu/project/qa/orbit/goc"
+
