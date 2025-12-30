@@ -59,3 +59,5 @@ Please check https://pkg.go[GIN] 2025/12/29 - 10:35:55 | 200 |   29.863643ms |  
 [GIN] 2025/12/29 - 19:09:56 | 200 |     994.288µs |       127.0.0.1 | POST     "/v1/cover/register?name=api&address=http://198.19.249.3:60273"
 [GIN] 2025/12/30 - 10:25:26 | 200 |   21.269265ms |       127.0.0.1 | POST     "/v1/cover/register?name=api&address=http://198.19.249.3:60273"
 [GIN] 2025/12/30 - 11:20:04 | 200 |   19.128358ms |       127.0.0.1 | POST     "/v1/cover/register?name=api&address=http://198.19.249.3:60273"
+[GIN] 2025/12/30 - 16:15:10 | 200 |   22.800713ms |       127.0.0.1 | POST     "/v1/cover/register?name=api&address=http://198.19.249.3:60273"
+[GIN] 2025/12/30 - 16:26:36 | 200 |   25.870656ms |       127.0.0.1 | POST     "/v1/cover/register?name=api&address=http://198.19.249.3:60273"
